@@ -11,12 +11,16 @@ int main() {
 		while(!fin.eof()){
 			fin>> renta >>nota;
 			if ((renta<=22000) && (nota>6)) {
-				cout << "Allow: " << nombre << " con renta: " << renta << " y nota: "<< nota << endl;
+				//cout << "Allow: " << nombre << " con renta: " << renta << " y nota: "<< nota << endl;
 				fout << nombre << " " << renta << " " << nota << endl;
-				//Hacemos cast y escribimos en ACEPTADOS.BEC
-				fbin.write(reinterpret_cast<const char *>(&nombre), sizeof(string));
-				fbin.write(reinterpret_cast<const char *>(&renta), sizeof(float));
-				fbin.write(reinterpret_cast<const char *>(&nota), sizeof(float));
+				cout<<reinterpret_cast<const char *>(&nombre);
+				cout<< sizeof(string);
+				cout<<(reinterpret_cast<const char *>(&renta));
+				cout<<sizeof(renta);
+
+				fbin.write(reinterpret_cast<const char *>(&nombre), sizeof(string));//Cast
+				fbin.write(reinterpret_cast<const char *>(&renta), sizeof(float));//Cast
+				fbin.write(reinterpret_cast<const char *>(&nota), sizeof(float));//Cast
 			}
 			fin>>nombre;//Leemos para saber si estamos en fin de archivo
 		}
