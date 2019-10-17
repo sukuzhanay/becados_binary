@@ -4,7 +4,5 @@ project(becados_io_bin)
 set(CMAKE_CXX_STANDARD 14)
 
 add_executable(becados_io_bin
-        aceptados.bec
-        aceptados.txt
         main.cpp
         solicitantes.txt)
