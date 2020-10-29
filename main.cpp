@@ -5,9 +5,8 @@ int main() {
 	string nombre;
 	float renta, nota;
 	ifstream fin("../solicitantes.txt");//Declaramos fin como variable de entrada
-	ofstream fout("../aceptados.txt");//Declaramos fout como variable de salida
+	//ofstream fout("../aceptados.txt");//Declaramos fout como variable de salida
 	ofstream fbin("../aceptados.bec",ios::out | ios::binary);//Variable binaria
-
 	fin>>nombre;//leemos un campo para saber si estamos en fin de archivo
 	try{ // Declaro inicio del bloque que pudiese generar alguna excepcion
 		while(!fin.eof()){
